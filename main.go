@@ -42,7 +42,9 @@ func JsonHandling() {
 func main() {
 	// fmt.Println("Hello World!")
 	// fmt.Println("Constants:", PI, STRING)
-	JsonHandling()
+	// JsonHandling()
+	b.WithBufioScanner()
+	b.WithBufioReader()
 
 }
 

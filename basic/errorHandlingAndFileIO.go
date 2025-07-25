@@ -1,6 +1,7 @@
 package basic
 
 import (
+	"bufio"
 	"errors"
 	"fmt"
 	"os"
@@ -26,11 +27,26 @@ func FileIOExample() {
 
 func TakeUserInput() {
 	var input string
-	fmt.Println("user text is written to 'input' via reference:")
+	fmt.Println("user text is written to 'input' via reference (and can accept int values as well):")
 	/* note: scanln doesn't work when running code from vs code
 	(needs to be run in terminal) */
 	fmt.Scanln(&input)
 	fmt.Printf("you typed: %s\n", input)
+}
+
+func WithBufioScanner() {
+	fmt.Println("for simpler inputs")
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()         // start reading
+	line := scanner.Text() // get input
+	fmt.Println(line, "no need for delimiter")
+}
+
+func WithBufioReader() {
+	fmt.Println("for more complex inputs, e.g. runes, peeking ahead")
+	reader := bufio.NewReader(os.Stdin)
+	line, _ := reader.ReadString('\n')
+	fmt.Println(line, "need to specify delimiter (end of line character), which is included at the end of the 'line'")
 }
 
 func GetWorkingDirectory() {

@@ -9,14 +9,16 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "."
+            "program": ".",
+            "console": "integratedTerminal"
         },
         {
         "name": "Attach to Process",
         "type": "go",
         "request": "attach",
         "mode": "local",
-        "processId": 0
+        "processId": 0,
+        "console": "integratedTerminal"
         }
     ]
 }
